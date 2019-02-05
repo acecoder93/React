@@ -39,7 +39,7 @@ class App extends Component {
       <div>
         <h1>Hello World</h1>
         <h2> This is the beginning of react</h2>
-        <Products />
+        <Products productName="macintosh" productID={777} />
         <h3>Individual Information</h3>
         <Name />
       </div>

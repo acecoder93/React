@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Name from './Name'
 
 class Products extends Component {
     printProduct(product){
@@ -14,7 +15,10 @@ class Products extends Component {
         return(
             <div>
                 {myMessage}<br/>
+                <Name />
                 Hello World: I'm inside of the Products.js file <br/>
+                {this.props.productName}<br/>
+                {this.props.productID}<br/>
                 {this.printProduct(myProduct)}
             </div>
         )
