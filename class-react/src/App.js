@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Products from './Products';
+import Name from './Name';
 
 
 // class App extends Component {
@@ -39,6 +40,8 @@ class App extends Component {
         <h1>Hello World</h1>
         <h2> This is the beginning of react</h2>
         <Products />
+        <h3>Individual Information</h3>
+        <Name />
       </div>
     );
   };
