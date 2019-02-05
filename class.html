@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <main>
+        <h1>Albums</h1>
+        <ul class = "album-list">
+            <li>Music coming soon</li>
+        </ul>
+        <footer>
+        Copyright 2019
+        </footer> -->
+
+    </main>
+
+    <div id = "root"></div>
+    
+
+    <!-- Installed React -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <!-- Setting up script tag to run react -->
+    <!-- <script>
+        // Creating React Element takes in 3 arguments (type of tag, class name, and content)
+        let h1 = React.createElement('h1', null, 'Albums');
+        let li = React.createElement('li', null, 'Music coming soon');
+        let ul = React.createElement('ul',{className: 'album-list'}, li);
+        let footer = React.createElement('footer', null, 'Copyright 2019');
+
+        let main = React.createElement('main', null, [h1, ul, li, footer]);
+
+        // ReactDom takes two arguments (what item I want to render, and where it will render )
+        ReactDOM.render(main, document.getElementById('root'));
+    </script> -->
+
+    <script type="text/babel">
+    
+    class App extends React.Component {
+        
+        render(){
+            return (
+                <div>
+                    Hello World    
+                </div>
+            );
+        };
+    };
+
+    ReactDOM.render(<App/>, document.getElementById('root'));
+    
+    </script>
+</body>
+</html>
