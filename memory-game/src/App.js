@@ -14,6 +14,7 @@ class App extends Component {
             Match cards to win
           </div>
         </header>
+        <br></br>
         <div>  
         <MemoryCard />
         <MemoryCard />

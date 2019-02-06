@@ -8,7 +8,7 @@ class MemoryCard extends Component{
     render(){
         return(
             <div class = "MemoryCard">
-                {/* <img id= "AAA" alt="description" src="https://cdn.auth0.com/blog/optimizing-react/logo.png"></img> */}
+                {/* <img class="DC_image" alt="description" src="https://cdn.auth0.com/blog/optimizing-react/logo.png"></img> */}
             </div>
         )
     }
