@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    Hello World
+
+
+    <script>
+        let bob = function(num, str, x){
+            console.log('bob', num, str, this, x);
+            return true;
+
+        }
+
+        let bill = {
+            name : "Bill Murray",
+            movie: "Lost in Translation",
+            myMethod: function(fn){
+                let a1 =  arguments[1];
+                let a2 = arguments[2];
+                let a3 = arguments[3];
+
+
+                fn.apply(bill, [a1, a2, a3]);
+            }
+        }
+
+        bill.myMethod(bob, 1, "hello yall", "hello");
+
+
+        // Using Call 
+        // bob.call(bill, 1, "helloBob", "hello");
+
+        // Using Apply (Similar to Call; however, you use an array)
+        // bob.apply(bill, [1, "helloAnuj", "hello Erick"]);
+
+        // Issue with "Bill" below is that we are unable to pass in the parameters to bob function
+        // bill.myMethod(bob)
+
+        // bob(1, "hello bob", "somethhing");
+
+        // Bind
+        var setVar = bob.bind(bill, 1, "hello", "hello");
+    </script>
+</body>
+</html>
