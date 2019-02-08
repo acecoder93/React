@@ -45,7 +45,7 @@ class App extends Component {
       return <MemoryCard />
     });
 
-    
+
     return (
       <div className="App">
         <header className="App-header">
@@ -58,28 +58,16 @@ class App extends Component {
         </header>
         <br></br>
         <div>  
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
+        {cardsJSX.slice(0,4)}
         </div>
         <div>  
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
+        {cardsJSX.slice(4,8)}
         </div>
         <div>  
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
+        {cardsJSX.slice(8,12)}
         </div>
         <div>  
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
+        {cardsJSX.slice(12,16)}
         </div>
       
       </div>
