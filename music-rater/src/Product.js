@@ -1,14 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Media } from 'react-bootstrap'
 
 class Product extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
+ 
 
     render() {
         return (
+            <Media>
+                <h3>{this.props.data.title}</h3>
+
+                <Media.Body>
+                <p>
+                {this.props.data.artist}
+                {this.props.data.rating}
+                {this.props.data.releaseDate}
+                </p>
+
+
+
+                </Media.Body>
+              
+
+
+
+
+
+            </Media>
+            
+
             
         );
     }

@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Media } from 'react-bootstrap';
 import Product from './Product';
 
 class Products extends React.Component {
@@ -72,9 +70,10 @@ class Products extends React.Component {
 
     render() {
 
-        const listMusic = this.music.map(item)=>{
-            return <Product key = {item.listNo} data = {item}  />
-        }
+        const listMusic = this.music.map(item => {
+            console.log(item)
+            // return <Product key = {item.listNo} data = {item}  />
+        });
         return (
             <div>
                 {listMusic}
