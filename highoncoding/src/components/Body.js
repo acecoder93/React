@@ -7,9 +7,12 @@ import './BodyStyle.css'
 export default class Body extends Component {
   render() {
     return (
-      <div className="bodyStyle">
+      <div className="">
+        <br></br>
           <Content1 />
+        <br></br>
           <Content2 />
+        <br></br>
           <Content3 />
         
       </div>
