@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
 export default class Content3 extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            comments: 0,
+            likes: 0
+        }
+    }
   render() {
     return (
         <div>
