@@ -7,13 +7,18 @@ class Project extends React.Component {
         
     }
 
+
+    deleteProject(id){
+        this.props.onDelete(id)
+    }
+
     render() {
         let projectItems;
 
         if (this.props.projects){
             projectItems =  this.props.projects.map((item)=>{
                 // Returning the value back into a new array
-                return <ProjectItem project = {item} />
+                return <ProjectItem project = {item} onDelete={this.deleteProject.bind(this)} />
 
             })
         }

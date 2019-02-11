@@ -6,8 +6,9 @@ class ProjectItem extends React.Component {
         
     }
 
-    handleDelete(){
+    handleDelete(id){
         console.log('Hello World');
+        this.props.onDelete.id
 
     }
 
@@ -16,7 +17,7 @@ class ProjectItem extends React.Component {
                 <li>
                     <strong>{this.props.project.category}</strong>
                     {this.props.project.title}
-                    <a href="#" onClick={this.handleDelete.bind(this)}>X</a>
+                    <a href="#" onClick={this.handleDelete.bind(this, this.props.item.id)}>X</a>
 
                 </li>
 
