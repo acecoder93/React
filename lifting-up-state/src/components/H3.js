@@ -9,7 +9,9 @@ class H3 extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div>
+                <button onClick={()=>this.props.onClickProp()}>Submit</button>
+            </div>
             
         );
     }

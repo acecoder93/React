@@ -9,7 +9,11 @@ class H2 extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div>
+                <h2>(Sibling) Click Counter: {this.props.clickCount}</h2>
+
+                <button onClick={()=>{this.props.resetter()}}>Reset</button>
+            </div>
         );
     }
 }

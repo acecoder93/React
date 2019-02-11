@@ -9,7 +9,9 @@ class H1 extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div>
+                <h1>Passing State in ReactJS</h1>
+            </div>
             
         );
     }
