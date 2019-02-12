@@ -35,13 +35,14 @@ class App extends Component {
       contacts: list
     })
   }
+  
 
   render() {
     return (
       <div>
         <h1>Hello World</h1>
         <AddContact addNewContact={this.handleAddContact.bind(this)} />
-        <Contacts contactList={this.state.contacts} />
+        <Contacts fullContactList={this.state.contacts} />
       </div>
     );
   }

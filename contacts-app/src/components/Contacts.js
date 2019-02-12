@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ContactsItems from './ContactsItems';
 
 class Contacts extends React.Component {
     constructor(props) {
@@ -8,15 +9,21 @@ class Contacts extends React.Component {
     }
 
     render() {
+        let contactItems;
 
+        
+        console.log(this.props.fullContactList) // Props of full list DO transfer
 
-        let contactItems = this.props.contactList
-        console.log('thisiscontactspage');
-        console.log(contactItems)
-
+        if(this.props.fullContactList){
+            contactItems = this.props.fullContactList.map((item)=>{
+                return <ContactsItems contact ={item} />
+    
+            })
+            console.log(contactItems) // issue with list; doesn't show contents but array expands
+        }
 
         return (
-            <div>Contacts</div>
+            <div>{contactItems}</div>
             
         );
     }
