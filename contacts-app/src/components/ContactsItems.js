@@ -6,12 +6,20 @@ class ContactsItems extends React.Component {
         super(props);
         
     }
+    
+
+    handleDelete(id){
+
+        this.props.onDelete(id)
+
+    }
 
     render() {
         return (
             <div>
                 <ul>
                     <h3>Contact Information </h3>
+                    <a href="#" onClick={this.handleDelete.bind(this, this.props.contact.id)}>X</a>
                     <li>{this.props.contact.name}</li>
                     {/* <li>{this.props.contact.email}</li> */}
                     {/* <li>{this.props.contact.phone}</li> */}

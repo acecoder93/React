@@ -8,6 +8,10 @@ class Contacts extends React.Component {
         
     }
 
+    deleteContact(id){
+        this.props.onDelete(id);
+    }
+
     render() {
         let contactItems;
 
@@ -16,7 +20,7 @@ class Contacts extends React.Component {
 
         if(this.props.fullContactList){
             contactItems = this.props.fullContactList.map((item)=>{
-                return <ContactsItems contact ={item} />
+                return <ContactsItems contact ={item} onDelete={this.deleteContact.bind(this)} />
     
             })
             console.log(contactItems) 

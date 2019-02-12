@@ -36,8 +36,20 @@ class App extends Component {
     })
   }
 
-  handleDeleteContact(){
-    
+  handleDeleteContact(id){
+    let list = this.state.contacts;
+    let index = list.findIndex(x => x.id === id);
+
+
+    console.log(index);
+
+    list.splice(index, 1);
+
+    this.setState({
+      contacts: list
+    })
+
+
 
   }
   
@@ -46,7 +58,7 @@ class App extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        <AddContact addNewContact={this.handleAddContact.bind(this)} />
+        <AddContact addNewContact={this.handleAddContact.bind(this)} onDelete={this.handleDeleteContact.bind(this)} />
         <Contacts fullContactList={this.state.contacts} />
       </div>
     );
