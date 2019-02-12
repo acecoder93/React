@@ -35,6 +35,11 @@ class App extends Component {
       contacts: list
     })
   }
+
+  handleDeleteContact(){
+    
+
+  }
   
 
   render() {

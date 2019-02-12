@@ -12,14 +12,14 @@ class Contacts extends React.Component {
         let contactItems;
 
         
-        console.log(this.props.fullContactList) // Props of full list DO transfer
+        console.log(this.props.fullContactList) 
 
         if(this.props.fullContactList){
             contactItems = this.props.fullContactList.map((item)=>{
                 return <ContactsItems contact ={item} />
     
             })
-            console.log(contactItems) // issue with list; doesn't show contents but array expands
+            console.log(contactItems) 
         }
 
         return (
