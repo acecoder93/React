@@ -8,6 +8,13 @@ class Contacts extends React.Component {
     }
 
     render() {
+
+
+        let contactItems = this.props.contactList
+        console.log('thisiscontactspage');
+        console.log(contactItems)
+
+
         return (
             <div>Contacts</div>
             

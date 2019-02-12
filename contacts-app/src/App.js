@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddContact from './components/AddContact';
 import Contacts from './components/Contacts';
+import uuid from 'uuid';
 
 
 class App extends Component {
@@ -8,15 +9,31 @@ class App extends Component {
 
   componentWillMount(){
 
-    this.setState({
-      contacts: []
-    }) // End of Set State
+    this.state = {
+      contacts: [
+        {
+          id: uuid.v4(),
+          name: "John Doe",
+          email: "jdoe@gmail.com",
+          phone: "777-777-7777",
+          address: "1800 John Doe Drive",
+          city: "Houston",
+          state: "Texas",
+          zipcode: 77082
+        }
+      ] // End of contacts array
+    }
 
   } // End of componentWillMount
 
 
-  handleAddContact(){
-    let contacts = this.state.contacts;
+  handleAddContact(newContact){
+    let list = this.state.contacts;
+    list.push(newContact);
+
+    this.setState({
+      contacts: list
+    })
   }
 
   render() {
@@ -24,7 +41,7 @@ class App extends Component {
       <div>
         <h1>Hello World</h1>
         <AddContact addNewContact={this.handleAddContact.bind(this)} />
-        <Contacts />
+        <Contacts contactList={this.state.contacts} />
       </div>
     );
   }
