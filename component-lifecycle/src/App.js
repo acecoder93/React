@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class App extends React.Component {
 
   componentWillMount(){
     console.log("component will mount")
+  }
+
+  componentWillUnmount(){
+    console.log("component unmounted");
   }
   
   update(){
@@ -41,9 +46,32 @@ class App extends React.Component {
 
 
 
+class Wrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    
+  }
 
-App.propTypes = {
-  
-};
 
-export default App
+  mount(){
+    ReactDOM.render(<App />, document.getElementById('a'))
+  }
+
+  unmount(){
+    ReactDOM.unmountComponentAtNode(document.getElementById('a'))
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick = {this.mount.bind(this)}>Mount</button>
+        <button onClick = {this.unmount.bind(this)}>Unmount</button>
+
+        <div id = "a">THIS IS DIV</div>
+      </div>
+      
+    );
+  }
+}
+
+export default Wrapper
