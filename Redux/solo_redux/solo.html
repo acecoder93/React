@@ -4,13 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Solo Redux</title>
 
     
 </head>
 <body>
+    hello world
+
     
     <!-- Script Tags -->
     <script src= "https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
+    <script>
+        // Creating Action (Objects) ~ typically an action is placed in a function
+        var person = {
+            type: "ADD",
+            personData: {
+                id: 1,
+                name: "Anuj",
+                age: 25,
+            }
+        };
+
+        // Action Creator (A Function)
+        
+        function addPerson(id, name, age){
+            return {
+                type: "ADD",
+                personData:{
+                    id: id,
+                    name: name,
+                    age: age
+                }
+            }
+
+        }
+
+        function removePerson(id){
+            return {
+                type: "REMOVE",
+                personID:id
+            }
+        }
+
+        var Anuj = addPerson(1, "Anuj", 25);
+
+        console.log(Anuj.type)
+
+        // Creating initial global state
+        const initialState = {
+            persons: []
+        }
+
+        // Creating a reducer ( a function that takes in state and action)
+        // "state" that the store has
+        function reducer(state, action){
+            if(state === undefined){
+                state = initialState
+            }
+
+            if (action.type === "ADD"){
+                let newPerson = {
+                    id: action.personData.id,
+                    name: action.personData.name,
+                    age: action.personData.age
+                }
+
+                // This return is updating the global state
+                return {
+                    ...state,
+                    persons: state.persons.concat(newPerson)
+                } 
+            } 
+            else if (action.type === "REMOVE"){
+                
+                return{
+                    ...state,
+                    persons: state.persons.filter(person => person.id != action.personID)
+                }
+
+            }
+            else {
+                return state;
+            }
+
+
+
+        }
+
+        reducer(initialState)
+
+
+
+        var store = Redux.createStore(reducer);
+
+        store.subscribe(showState);
+
+        function showState(){
+
+            console.log(store.getState())
+        }
+        store.dispatch(addPerson(1, "Raul", 26));
+
+
+    
+    </script>
 </body>
 </html>
