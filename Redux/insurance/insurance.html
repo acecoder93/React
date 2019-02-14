@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Insurance Company</title>
+</head>
+
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
+<script>
+
+// People dropping off forms (action creators)
+    function createClaim (name, amount){
+        return{
+            type: "CREATE_CLAIM",
+            payload: {
+                name: name,
+                moneyToCollect: amount
+            }
+        }
+    }
+
+    function createPolicy (name){
+        return {
+            type: "CREATE_POLICY",
+            payload: {
+                name: name,
+                amount: 20
+            }
+        }
+    }
+
+    function deletePolicy (name){
+        return{
+            type: "DELETE_POLICY",
+            payload: {
+                name: name
+            }
+        }
+    }
+
+
+// Different Departments in Company (Reducers)
+// "oldClaims" = state
+function claimsHistory(oldClaims, action){
+    if(action.type === "CREATE_CLAIM"){
+        return [...oldClaims, action.payload];
+    }
+    return oldClaims
+}
+
+function accounting(moneyBalance, action){
+    if(action.type === "CREATE_CLAIM"){
+        return moneyBalance - action.payload.moneyToCollect
+    } 
+    else if (action.type === "CREATE_POLICY"){
+        return moneyBalance + action.payload.amount
+    }
+    return moneyBalance
+}
+
+function policies(listOfPolicies,action){
+    if (action.type === "CREATE_POLICY"){
+        return [...listOfPolicies, action.payload.name];
+    }
+    else if (action.type === "DELETE_POLICY"){
+        return listOfPolicies.filter(policy => policy != action.payload.name)
+    }
+    return listOfPolicies
+}
+
+// Create Store & Company Setup
+var store = createStore.Redux(reducer)
+
+const 
+
+
+</script>
+<body>
+    
+</body>
+</html>
