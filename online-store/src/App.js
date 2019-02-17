@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+
 
 // imported from internal files
 import Router from './Router';
@@ -11,7 +12,7 @@ const Navigation = (props) =>
       <li><NavLink to="/cart" >Cart</NavLink></li>
     </ul>
   </nav>
-  
+
 
 class App extends Component {
   render() {
