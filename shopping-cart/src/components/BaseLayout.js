@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 class BaseLayout extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
         
-    }
+    // }
 
     render() {
         return (
             <div>
                 <table>
+                    <tbody>
                     <tr>
                         <td style={{width: 300}}>
                             Menu Items
@@ -27,6 +28,7 @@ class BaseLayout extends React.Component {
 
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
             

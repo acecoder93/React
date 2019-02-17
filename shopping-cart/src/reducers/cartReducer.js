@@ -9,6 +9,21 @@ function cartReducer (state, action){
                     productPrice: 1
                 }
             ]
-        }
+        } // end of return
+    } // end of if statement
+
+    switch(action.type){
+        case 'addProduct':
+        return state;
+
+        case 'deleteProduct':
+            return state;
+
+        default:
+            return state;
     }
+
+
 }
+
+export default cartReducer
