@@ -1,12 +1,13 @@
 import React from 'react';
 import ProductListItem from './ProductListItem';
 import { connect } from 'react-redux';
+import { cartItemsWithQuantity } from '../cart/index'
 
 function ProductListing(props){
     return <div className='product-listing'> 
         {
             props.products.map(product => 
-                <ProductListItem product={product} addToCart={props.addToCart} />)
+                <ProductListItem product={product} addToCart={props.addToCart} cart={cartItemsWithQuantity(props.cart)} />)
         }
 
         
