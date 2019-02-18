@@ -94,6 +94,7 @@
 
 // console.log(newState)
 
+
 // Prepend an item to an array
 
 // var state = [3, 4, 5, 6];
@@ -102,3 +103,63 @@
 //     newItem, ...state
 // ]
 // console.log(newState)
+
+
+// Add an item to an array
+// state = [5, 6, 7, 8];
+// var newItem = 0;
+// var newState = [
+//     ...state, newItem
+// ]
+// console.log(newState);
+
+
+// Update an item with an array with map
+// state = [1, 3, "X", 4];
+
+// var newState = state.map((item)=>{
+//     if (item ==="X"){
+//         return 3;
+//     }
+//     else {
+//         return item;
+//     }
+// })
+// console.log(newState)
+
+// Insert item in the middle of an array
+// var state = [1, 2, 3, 5, 6];
+
+// var newItem = 4;
+
+// // make a copy (copied the entire array, we can specifiy if wanted)
+// var newState = state.slice();
+
+// // insert new item at index 3
+// newState.splice(3, 0, newItem)
+
+// console.log(newState);
+
+// Alternative way to insert item into middle of an array
+// var state = [1, 2, 3, 5, 6];
+// var newItem = 4;
+
+// var newState = [
+//     ...state.slice(0,3), // copy first 3 items unchanged
+//     newItem, // insert new item
+//     ...state.slice(3) // copy rest of array starting with index 3
+// ]
+
+// console.log(newState)
+
+// Remove an item from an array with filter
+
+state = [1, 2, "X", 4]
+var newState = state.filter((item)=>{
+    if (item === "X"){
+        return false;
+    }
+    return true
+})
+
+console.log(newState);
