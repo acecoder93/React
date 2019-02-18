@@ -9,9 +9,9 @@ class Cart extends React.Component {
     // }
 
     render() {
-        var product = this.props.productCart.map((product)) => {
+        var product = this.props.productCart.map((product) => {
             return <li>{product.productName}</li>
-        }
+        })
         return (
             <div>cart component
                 <br />
