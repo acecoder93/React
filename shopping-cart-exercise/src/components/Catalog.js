@@ -11,17 +11,26 @@ class Catalog extends React.Component {
     // }
 
 
-    static defaultProps = {
-        
-    }
+    static defaultProps = {produce: [
+        {name: "Apples",
+        price: 5,
+        description: "red"},
+        {name: "Banana",
+        price: 3,
+        description: "un-ripened"},
+        {name: "Carrot",
+        price: 4,
+        description: "baby"}]}
 
     render() {
+        let products;
+        products = this.props.produce.map(product=>{
+            return <li key={product.name}> {product.name} {product.price} <button>Add to Cart</button></li>
+        })
 
         return (
             <div>
-
-
-                <CatalogItems />
+                <CatalogItems products ={products}/>
             </div>
         );
     }

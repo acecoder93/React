@@ -1,22 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import addProduct from '../action/addProduct';
 
 class CatalogItems extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
+
 
     render() {
         return (
-            
+            <div>
+                {this.props.products}
+            </div>
         );
     }
 }
 
 
-CatalogItems.propTypes = {
-    
-};
+
 
 export default CatalogItems
